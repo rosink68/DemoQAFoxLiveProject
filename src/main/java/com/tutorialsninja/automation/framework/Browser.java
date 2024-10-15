@@ -6,13 +6,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
 
 import com.tutorialsninja.automation.base.Base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Browser {
 	public static Logger log = Logger.getLogger(Browser.class);
@@ -23,30 +21,19 @@ public class Browser {
 		switch (browser) {
 
 		case "chrome":
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			Base.driver = new ChromeDriver();
 			log.info("Chrome Browser is Started" + Base.driver.hashCode());
 			return Base.driver;
 
 		case "ie":
-			WebDriverManager.iedriver().setup();
+			//WebDriverManager.iedriver().setup();
 			Base.driver = new InternetExplorerDriver();
 			log.info("Internet Explorer Browser is Started" + Base.driver.hashCode());
 			return Base.driver;
 
-		case "opera":
-			WebDriverManager.operadriver().setup();
-			Base.driver = new OperaDriver();
-			log.info("Opera Browser is Started" + Base.driver.hashCode());
-			return Base.driver;
-
-		case "htmlunit":
-			Base.driver = new HtmlUnitDriver();
-			log.info("HtmlUnit Browser is Started" + Base.driver.hashCode());
-			return Base.driver;
-
 		default:
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			Base.driver = new FirefoxDriver();
 			log.info("Firefox Browser is Started" + Base.driver.hashCode());
 			return Base.driver;

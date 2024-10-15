@@ -4,14 +4,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Test {
 	
 
 	public static void main(String[] args) {
 	WebDriver driver;
-	WebDriverManager.chromedriver().setup();
+	//WebDriverManager.chromedriver().setup();
 	driver=new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.get("http://toolsqa.com/automation-practice-form/");
