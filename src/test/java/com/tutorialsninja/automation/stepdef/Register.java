@@ -55,7 +55,7 @@ public class Register {
 		assertTrue(Elements.isDisplayed(AccountSuccessPage.successBreadcrumb));
 	}	
 	
-	@Then("I should see that the User Account is not created")
+	@Then("^I should see that the User Account is not created$")
 	public void i_should_see_that_the_user_account_is_not_created() {
 
 		// wenn das Wort "Register" noch angezeigt wird, befindet man sich noch auf der Registerseite
@@ -63,7 +63,7 @@ public class Register {
 		assertTrue(Elements.isDisplayed(RegisterPage.registerBreadcrumb));
 	}
 
-	@And("I should see the error messages informing the user to fill the mandatory fields")
+	@And("^I should see the error messages informing the user to fill the mandatory fields$")
 	public void i_should_see_the_error_messages_informing_the_user_to_fill_the_mandatory_fields() {
 
 		assertTrue(Elements.isDisplayed(RegisterPage.firstNameWarning));
@@ -74,19 +74,19 @@ public class Register {
 		assertTrue(Elements.isDisplayed(RegisterPage.mainWarning));
 	}
 	
-	@And("I subscribe to Newsletter")
+	@And("^I subscribe to Newsletter$")
 	public void i_subscribe_to_newsletter() {
 
 		Elements.click(RegisterPage.yesToNewsletter);
 	}
 	
-	@When("I provide the below duplicate details into the fields")
+	@When("^I provide the below duplicate details into the fields$")
 	public void i_provide_the_below_duplicate_details_into_the_fields(io.cucumber.datatable.DataTable dataTable) {
 
 		RegisterPage.enterAllRegistrationDetails(dataTable, "duplicate");
 	}
 	
-	@Then("I should see the warning message stating that the user is already created")
+	@Then("^I should see the warning message stating that the user is already created$")
 	public void i_should_see_the_warning_message_stating_that_the_user_is_already_created() {
 
 		assertTrue(Elements.VerifyTextEquals(RegisterPage.mainWarning,"Warning: E-Mail Address is already registered!"));
