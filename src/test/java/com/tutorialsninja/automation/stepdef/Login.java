@@ -51,13 +51,11 @@ public class Login {
 		Elements.click(LoginPage.forgottenPassword);
 		Elements.TypeText(ForgotPasswordPage.emailField, email);
 		Elements.click(ForgotPasswordPage.continueButton);
-		
 	}
 	
 	@Then("^I should see a message informing that the password reset details have been sent to the email address$")
 	public void i_should_see_a_message_informing_that_the_password_reset_details_have_been_sent_to_the_email_address()  {
 	    
 		assertTrue(Elements.VerifyTextEquals(LoginPage.mainWarning,"An email with a confirmation link has been sent your email address."));
-		
 	}
 }
