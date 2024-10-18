@@ -15,6 +15,6 @@ import io.cucumber.junit.CucumberOptions;
 						   "html:target/cucumber_html_report.html"}
 //				 , tags = "@Orders and @One"
 				 )
-public class Runner {
+public class TestRunner {
 
 }
